@@ -250,6 +250,56 @@
   }
   .ledger-foot a { color: var(--ink-soft); }
 
+  /* ---------- LATENESS LADDER ---------- */
+  .lateness-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 8px 0 18px; flex-wrap: wrap; gap: 8px; }
+  .lateness-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; }
+  .lateness-head .asof { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
+  .lateness-content { margin-bottom: 40px; }
+
+  .ladder-deadline {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    border: 1px dashed #b3261e; color: #b3261e;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 9px 14px; margin-bottom: 14px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(179,38,30,0.045) 8px, rgba(179,38,30,0.045) 16px);
+  }
+  .ladder-row { display: grid; grid-template-columns: 190px 1fr 70px; gap: 14px; align-items: center; padding: 8px 0; border-bottom: 0.5px solid var(--rule); }
+  .ladder-bill { font-size: 14.5px; font-weight: 600; line-height: 1.2; }
+  .ladder-track { height: 18px; background: var(--rule-soft); border-radius: 2px; overflow: hidden; }
+  .ladder-fill { height: 100%; border-radius: 2px; min-width: 3px; transition: width 0.6s ease; }
+  .ladder-num { font-family: var(--display); font-size: 23px; line-height: 1; text-align: right; }
+  .ladder-num span { display: block; font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 3px; }
+
+  .tier1 { background: #e6c229; }
+  .tier2 { background: #e09b1a; }
+  .tier3 { background: #d2691e; }
+  .tier4 { background: #d11a0f; animation: redPulse 2s ease-in-out infinite; }
+
+  .ladder-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
+  .ladder-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ll-swatch { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+  .ladder-foot-note { font-size: 13px; font-style: italic; color: var(--ink-soft); margin-top: 14px; line-height: 1.55; }
+
+  /* late badge on FY26 bill cards */
+  .late-badge { font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; padding: 4px 8px; border-radius: 2px; border: 1px solid; white-space: nowrap; flex-shrink: 0; }
+  .late-badge.tier1 { background: #fbf1c2; color: #8a6c08; border-color: #e6c229; }
+  .late-badge.tier2 { background: #fbe6c0; color: #9a6310; border-color: #e09b1a; }
+  .late-badge.tier3 { background: #f7ddc6; color: #9c4d16; border-color: #d2691e; }
+  .late-badge.tier4 { background: #f9d4d0; color: #b3261e; border-color: #d11a0f; animation: redPulse 2s ease-in-out infinite; }
+
+  /* FY27 countdown */
+  .fy27-count { text-align: center; padding: 20px 0 6px; }
+  .fy27-count .big { font-family: var(--display); font-size: clamp(56px, 11vw, 80px); line-height: 0.9; color: var(--status-house); }
+  .fy27-count .big-lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 8px; }
+  .fy27-stats { display: inline-flex; margin-top: 24px; border: 1px solid var(--rule); }
+  .fy27-stat { padding: 13px 24px; border-right: 1px solid var(--rule); }
+  .fy27-stat:last-child { border-right: none; }
+  .fy27-stat .n { font-family: var(--display); font-size: 27px; line-height: 1; }
+  .fy27-stat .l { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 5px; }
+  .fy27-compare { font-style: italic; font-size: 13.5px; color: var(--ink-soft); margin: 20px auto 0; max-width: 640px; line-height: 1.55; }
+
+  @keyframes redPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+
   /* ---------- SCENARIO TRACKER ---------- */
   .scenario-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 44px 0 8px; flex-wrap: wrap; gap: 8px; }
   .scenario-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; }
@@ -273,6 +323,10 @@
   @media (max-width: 520px) {
     .masthead h1 { font-size: 38px; }
     .stage-labels span { font-size: 6.5px; }
+    .ladder-row { grid-template-columns: 110px 1fr 52px; gap: 9px; }
+    .ladder-bill { font-size: 12px; }
+    .ladder-num { font-size: 18px; }
+    .fy27-stat { padding: 11px 14px; }
   }
 </style>
 </head>
@@ -314,16 +368,16 @@
   <!-- BILLS SECTION -->
   <div class="section-head">
     <h2 id="section-title">FY 2027 — All Twelve Bills</h2>
-    <div class="legend">
-      <span><span class="legend-dot" style="background:var(--status-enacted)"></span>Enacted</span>
-      <span><span class="legend-dot" style="background:var(--status-house)"></span>House</span>
-      <span><span class="legend-dot" style="background:var(--status-senate)"></span>Senate</span>
-      <span><span class="legend-dot" style="background:var(--status-committee)"></span>Full Comm.</span>
-      <span><span class="legend-dot" style="background:var(--status-subcommittee)"></span>Subcomm.</span>
-      <span><span class="legend-dot" style="background:var(--status-unreleased)"></span>Unreleased</span>
-    </div>
+    <div class="legend" id="bills-legend"></div>
   </div>
   <div id="bills-grid" class="bills-grid"></div>
+
+  <!-- LATENESS LADDER / COUNTDOWN -->
+  <div class="lateness-head">
+    <h2 id="lateness-title"></h2>
+    <div class="asof" id="lateness-sub"></div>
+  </div>
+  <div id="lateness-content" class="lateness-content"></div>
 
   <!-- DEADLINES SECTION -->
   <div class="deadlines-head">
@@ -380,43 +434,53 @@ function statusLabel(s) {
   }[s] || s;
 }
 
+// Lateness tiers (days past the Oct 1 deadline): yellows -> bright red
+function lateTier(d) {
+  if (d <= 60) return 1;
+  if (d <= 120) return 2;
+  if (d <= 180) return 3;
+  return 4;
+}
+const lateFill = { 1: '#e6c229', 2: '#e09b1a', 3: '#d2691e', 4: '#d11a0f' };
+const lateText = { 1: '#a8860a', 2: '#a86f0f', 3: '#9c4d16', 4: '#b3261e' };
+
 const data = {
   fy26: [
-    { name: "Agriculture, Rural Development, FDA", status: "enacted", currentStage: 5, completed: 6,
+    { name: "Agriculture, Rural Development, FDA", status: "enacted", currentStage: 5, completed: 6, daysLate: 42,
       action: "Signed as part of H.R. 5371 (P.L. 119-37), the deal that ended the 43-day fall shutdown.",
-      date: "Nov 12, 2025", num: "P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
-    { name: "Military Construction, VA", status: "enacted", currentStage: 5, completed: 6,
+      date: "Nov 12, 2025", num: "H.R. 5371 · P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
+    { name: "Military Construction, VA", status: "enacted", currentStage: 5, completed: 6, daysLate: 42,
       action: "Signed within H.R. 5371 (P.L. 119-37). Provided ~$19.7B for military construction and family housing.",
-      date: "Nov 12, 2025", num: "P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
-    { name: "Legislative Branch", status: "enacted", currentStage: 5, completed: 6,
+      date: "Nov 12, 2025", num: "H.R. 5371 · P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
+    { name: "Legislative Branch", status: "enacted", currentStage: 5, completed: 6, daysLate: 42,
       action: "Signed within H.R. 5371 (P.L. 119-37), the shutdown-ending package.",
-      date: "Nov 12, 2025", num: "P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
-    { name: "Commerce, Justice, Science", status: "enacted", currentStage: 5, completed: 6,
+      date: "Nov 12, 2025", num: "H.R. 5371 · P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
+    { name: "Commerce, Justice, Science", status: "enacted", currentStage: 5, completed: 6, daysLate: 114,
       action: "Enacted in a three-bill minibus alongside Energy-Water and Interior. House passed 397–28.",
-      date: "Jan 2026", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Energy & Water Development", status: "enacted", currentStage: 5, completed: 6,
+      date: "Jan 23, 2026", num: "Three-bill minibus", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Energy & Water Development", status: "enacted", currentStage: 5, completed: 6, daysLate: 114,
       action: "Enacted in the three-bill minibus with CJS and Interior-Environment.",
-      date: "Jan 2026", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Interior & Environment", status: "enacted", currentStage: 5, completed: 6,
+      date: "Jan 23, 2026", num: "Three-bill minibus", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Interior & Environment", status: "enacted", currentStage: 5, completed: 6, daysLate: 114,
       action: "Enacted in the three-bill minibus with CJS and Energy-Water.",
-      date: "Jan 2026", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Defense", status: "enacted", currentStage: 5, completed: 6,
-      action: "Signed into law as part of full-year FY26 funding for most federal agencies.",
-      date: "FY26 cycle", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Labor, HHS, Education", status: "enacted", currentStage: 5, completed: 6,
-      action: "Signed into law as part of full-year FY26 funding.",
-      date: "FY26 cycle", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Financial Services & Gen. Gov't", status: "enacted", currentStage: 5, completed: 6,
-      action: "Signed into law as part of full-year FY26 funding.",
-      date: "FY26 cycle", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "National Security & State Dept.", status: "enacted", currentStage: 5, completed: 6,
-      action: "Signed into law as part of full-year FY26 funding.",
-      date: "FY26 cycle", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Transportation & HUD", status: "enacted", currentStage: 5, completed: 6,
-      action: "Signed into law as part of full-year FY26 funding.",
-      date: "FY26 cycle", num: "Enacted", url: "https://www.congress.gov/crs-appropriations-status-table" },
-    { name: "Homeland Security", status: "enacted", currentStage: 5, completed: 6,
-      action: "The last FY26 bill to land. Signed as P.L. 119-86, ending the 76-day DHS shutdown that began Feb 14.",
+      date: "Jan 23, 2026", num: "Three-bill minibus", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Defense", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
+      action: "Signed in the Consolidated Appropriations Act, 2026, alongside four other bills.",
+      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Labor, HHS, Education", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
+      action: "Signed in the Consolidated Appropriations Act, 2026.",
+      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Financial Services & Gen. Gov't", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
+      action: "Signed in the Consolidated Appropriations Act, 2026.",
+      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "National Security & State Dept.", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
+      action: "Signed in the Consolidated Appropriations Act, 2026.",
+      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Transportation & HUD", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
+      action: "Signed in the Consolidated Appropriations Act, 2026.",
+      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+    { name: "Homeland Security", status: "enacted", currentStage: 5, completed: 6, daysLate: 211,
+      action: "The last FY26 bill to land — roughly seven months late. Signed as P.L. 119-86, ending the 76-day DHS shutdown that began Feb 14.",
       date: "Apr 30, 2026", num: "P.L. 119-86", url: "https://www.congress.gov/crs-appropriations-status-table" }
   ],
   fy27: [
@@ -476,8 +540,8 @@ function renderSummary(fy) {
   if (fy === 'fy26') {
     cells = [
       { num: 12, lbl: 'Enacted' },
-      { num: 0, lbl: 'Pending' },
-      { num: 2, lbl: 'Shutdowns' },
+      { num: 0, lbl: 'On Time' },
+      { num: 211, lbl: 'Days · Worst Delay' },
       { num: 119, lbl: 'Shutdown Days' }
     ];
   } else {
@@ -496,8 +560,10 @@ function renderSummary(fy) {
 
 function renderBills(fy) {
   const bills = data[fy];
+  const isFY26 = fy === 'fy26';
   document.getElementById('bills-grid').innerHTML = bills.map((b, i) => {
-    const color = statusColor(b.status);
+    const tier = isFY26 ? lateTier(b.daysLate) : 0;
+    const color = isFY26 ? lateFill[tier] : statusColor(b.status);
     const stages = STAGES.map((s, idx) => {
       let cls = 'stage';
       if (idx < b.completed) cls += ' done';
@@ -508,11 +574,14 @@ function renderBills(fy) {
       const at = (idx === b.currentStage && b.status !== 'enacted') ? ' class="at"' : '';
       return `<span${at}>${s}</span>`;
     }).join('');
+    const badge = isFY26
+      ? `<div class="late-badge tier${tier}">${b.daysLate} days late</div>`
+      : `<div class="bill-badge">${statusLabel(b.status)}</div>`;
     return `
       <div class="bill-card" style="--status:${color}; animation-delay:${i * 0.04}s">
         <div class="bill-head">
           <div class="bill-name">${b.name}</div>
-          <div class="bill-badge">${statusLabel(b.status)}</div>
+          ${badge}
         </div>
         <div class="bill-number">${b.num}</div>
         <div class="pipeline">${stages}</div>
@@ -526,14 +595,88 @@ function renderBills(fy) {
   }).join('');
 }
 
+// ---------- LATENESS LADDER (FY26) / COUNTDOWN (FY27) ----------
+function renderLegend(fy) {
+  const el = document.getElementById('bills-legend');
+  if (fy === 'fy26') {
+    el.innerHTML = `
+      <span><span class="legend-dot" style="background:${lateFill[1]}"></span>≤60 days late</span>
+      <span><span class="legend-dot" style="background:${lateFill[2]}"></span>61–120</span>
+      <span><span class="legend-dot" style="background:${lateFill[3]}"></span>121–180</span>
+      <span><span class="legend-dot" style="background:${lateFill[4]}"></span>180+ days</span>`;
+  } else {
+    el.innerHTML = `
+      <span><span class="legend-dot" style="background:var(--status-enacted)"></span>Enacted</span>
+      <span><span class="legend-dot" style="background:var(--status-house)"></span>House</span>
+      <span><span class="legend-dot" style="background:var(--status-senate)"></span>Senate</span>
+      <span><span class="legend-dot" style="background:var(--status-committee)"></span>Full Comm.</span>
+      <span><span class="legend-dot" style="background:var(--status-subcommittee)"></span>Subcomm.</span>
+      <span><span class="legend-dot" style="background:var(--status-unreleased)"></span>Unreleased</span>`;
+  }
+}
+
+function renderLateness(fy) {
+  const title = document.getElementById('lateness-title');
+  const sub = document.getElementById('lateness-sub');
+  const content = document.getElementById('lateness-content');
+
+  if (fy === 'fy26') {
+    title.textContent = 'How Late Was FY26?';
+    sub.textContent = '0 of 12 bills met the Oct 1, 2025 deadline';
+    const rows = data.fy26.map(b => ({ name: b.name, late: b.daysLate, date: b.date }))
+      .sort((a, b) => b.late - a.late);
+    const maxLate = rows[0].late;
+    content.innerHTML = `
+      <div class="ladder-deadline">
+        <span>◆ Statutory Deadline — October 1, 2025</span>
+        <span>0 of 12 met it</span>
+      </div>
+      ${rows.map(r => {
+        const t = lateTier(r.late);
+        return `
+          <div class="ladder-row">
+            <div class="ladder-bill">${r.name}</div>
+            <div class="ladder-track"><div class="ladder-fill tier${t}" style="width:${(r.late / maxLate * 100).toFixed(1)}%"></div></div>
+            <div class="ladder-num" style="color:${lateText[t]}">${r.late}<span>days</span></div>
+          </div>`;
+      }).join('')}
+      <div class="ladder-legend">
+        <span><span class="ll-swatch tier1"></span>≤60 days</span>
+        <span><span class="ll-swatch tier2"></span>61–120</span>
+        <span><span class="ll-swatch tier3"></span>121–180</span>
+        <span><span class="ll-swatch tier4"></span>180+ days</span>
+      </div>
+      <p class="ladder-foot-note">Not one of the twelve bills was signed before the fiscal year began. The shortest delay was 42 days; the longest — Homeland Security — ran 211 days, roughly seven months past the deadline, the product of a 76-day partial shutdown.</p>`;
+  } else {
+    title.textContent = 'The Countdown to FY27';
+    sub.textContent = 'No FY27 bill has cleared either chamber';
+    const days = daysUntil('2026-10-01');
+    const throughCmte = data.fy27.filter(b => b.currentStage >= 2).length;
+    const enacted = data.fy27.filter(b => b.status === 'enacted').length;
+    content.innerHTML = `
+      <div class="fy27-count">
+        <div class="big">${days}</div>
+        <div class="big-lbl">Days Until the October 1, 2026 Deadline</div>
+        <div class="fy27-stats">
+          <div class="fy27-stat"><div class="n">${enacted} / 12</div><div class="l">Enacted</div></div>
+          <div class="fy27-stat"><div class="n">${throughCmte} / 12</div><div class="l">Through House Cmte.</div></div>
+          <div class="fy27-stat"><div class="n">0 / 12</div><div class="l">Senate Acted</div></div>
+        </div>
+        <p class="fy27-compare">At the equivalent point in the FY26 cycle, both chambers had passed zero of twelve bills on the floor — the path that ended in a 43-day shutdown. Since FY1997, Congress has finished all twelve on time exactly zero times.</p>
+      </div>`;
+  }
+}
+
 function showFY(fy) {
   document.getElementById('btn-fy26').classList.toggle('active', fy === 'fy26');
   document.getElementById('btn-fy27').classList.toggle('active', fy === 'fy27');
   document.getElementById('section-title').textContent =
     fy === 'fy26' ? 'FY 2026 — All Twelve Bills' : 'FY 2027 — All Twelve Bills';
   document.getElementById('senate-note').textContent = senateNotes[fy];
+  renderLegend(fy);
   renderSummary(fy);
   renderBills(fy);
+  renderLateness(fy);
 }
 
 // ---------- DEADLINES ----------
