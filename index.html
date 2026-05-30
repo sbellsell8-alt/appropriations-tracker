@@ -300,6 +300,58 @@
 
   @keyframes redPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
 
+  /* ---------- ACTUALLY UNPRECEDENTED ---------- */
+  .historic-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 8px 0 16px; flex-wrap: wrap; gap: 8px; }
+  .historic-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; }
+  .historic-head .asof { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-faint); font-style: italic; }
+  .historic-intro { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 18px; }
+  .record-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 18px; }
+  .record-card { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--rec, var(--ink)); padding: 14px 16px; }
+  .record-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rec, var(--ink-faint)); margin-bottom: 8px; }
+  .record-headline { font-family: var(--display); font-size: 21px; line-height: 1.08; margin-bottom: 7px; }
+  .record-body { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
+  .routine-note { font-size: 12.5px; font-style: italic; color: var(--ink-faint); border-top: 0.5px solid var(--rule); padding-top: 12px; line-height: 1.55; margin-bottom: 40px; }
+
+  /* ---------- CONGRESS IN FLUX ---------- */
+  .cv-section { margin-bottom: 42px; }
+  .cv-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 8px 0 16px; flex-wrap: wrap; gap: 8px; }
+  .cv-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; }
+  .cv-head .sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
+  .cv-intro { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 18px; }
+  .cv-note { font-size: 12.5px; font-style: italic; color: var(--ink-faint); line-height: 1.55; margin-top: 12px; }
+
+  .dep-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 22px; }
+  .dep-cell { background: var(--paper); padding: 14px 12px; text-align: center; }
+  .dep-cell .n { font-family: var(--display); font-size: 32px; line-height: 1; }
+  .dep-cell .l { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 6px; }
+  .dep-group { margin-bottom: 18px; }
+  .dep-group h4 { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 10px; border-bottom: 0.5px solid var(--rule); padding-bottom: 5px; }
+  .dep-names { display: flex; flex-wrap: wrap; gap: 7px; }
+  .dep-chip { font-size: 13px; border: 1px solid var(--rule); border-radius: 2px; padding: 4px 9px; background: var(--paper); }
+  .dep-chip b { font-weight: 600; }
+  .dep-chip .meta { color: var(--ink-faint); }
+  .ps-R { color: #a3302d; font-family: var(--mono); font-size: 11px; }
+  .ps-D { color: #2d4a7b; font-family: var(--mono); font-size: 11px; }
+  .ps-I { color: #5b3a78; font-family: var(--mono); font-size: 11px; }
+
+  .pay-row { display: flex; justify-content: space-between; align-items: baseline; padding: 13px 0; border-bottom: 0.5px solid var(--rule); gap: 14px; }
+  .pay-label { font-size: 15.5px; font-weight: 600; }
+  .pay-label .sub { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-faint); margin-top: 2px; }
+  .pay-amt { font-family: var(--display); font-size: 27px; white-space: nowrap; line-height: 1; }
+  .pay-context { font-size: 13.5px; color: var(--ink-soft); font-style: italic; margin-top: 16px; line-height: 1.6; }
+  .pay-context strong { font-style: normal; font-weight: 600; }
+
+  .rich-row { display: grid; grid-template-columns: 38px 1fr auto; gap: 14px; align-items: center; padding: 11px 0; border-bottom: 0.5px solid var(--rule); }
+  .rich-rank { font-family: var(--display); font-size: 26px; color: var(--ink-faint); text-align: center; line-height: 1; }
+  .rich-rank.top { color: #b3261e; }
+  .rich-name { font-size: 15.5px; font-weight: 600; }
+  .rich-name .ps { font-weight: 400; margin-left: 4px; }
+  .rich-source { font-size: 12.5px; color: var(--ink-faint); margin-top: 2px; }
+  .rich-est { font-family: var(--display); font-size: 19px; text-align: right; white-space: nowrap; }
+  .data-links { background: var(--paper-2); border-left: 3px solid var(--ink); padding: 14px 16px; margin-top: 16px; font-size: 13px; line-height: 1.8; }
+  .data-links a { color: var(--ink); }
+  .data-links .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: 6px; }
+
   /* ---------- SCENARIO TRACKER ---------- */
   .scenario-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 44px 0 8px; flex-wrap: wrap; gap: 8px; }
   .scenario-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; }
@@ -346,15 +398,21 @@
 
   <!-- FY TOGGLE -->
   <div class="fy-toggle">
-    <button id="btn-fy26" onclick="showFY('fy26')">
+    <button id="btn-fy26" onclick="setTab('fy26')">
       <span class="yr-title">Fiscal Year 2026</span>
       <span class="yr-label">Oct 2025 – Sep 2026 · Closed</span>
     </button>
-    <button id="btn-fy27" class="active" onclick="showFY('fy27')">
+    <button id="btn-fy27" class="active" onclick="setTab('fy27')">
       <span class="yr-title">Fiscal Year 2027</span>
       <span class="yr-label">Oct 2026 – Sep 2027 · Active</span>
     </button>
+    <button id="btn-congress" onclick="setTab('congress')">
+      <span class="yr-title">Congress in Flux</span>
+      <span class="yr-label">Who's leaving · what they earn</span>
+    </button>
   </div>
+
+  <div id="fy-view">
 
   <!-- SUMMARY STRIP -->
   <div id="summary-strip" class="summary-strip"></div>
@@ -379,24 +437,160 @@
   </div>
   <div id="lateness-content" class="lateness-content"></div>
 
-  <!-- DEADLINES SECTION -->
+  <!-- SCENARIO TRACKER (odds) -->
+  <div id="scenario-section">
+    <div class="scenario-head">
+      <h2>The Odds at October 1</h2>
+      <div class="asof" id="scenario-asof"></div>
+    </div>
+    <div class="scenario-q">What happens to FY27 funding at the <b>October 1, 2026</b> deadline — weeks before the midterms? An analyst's handicap. Drag a slider to test your own.</div>
+    <div id="scenario-grid"></div>
+    <div class="scenario-total" id="scenario-total"></div>
+    <div class="scenario-note">
+      These are reasoned estimates from historical base rates and current conditions, not the output of a forecasting model. Since FY1977, Congress has finished all twelve bills on time only four times — last in FY1997. The single likeliest path is a short-term CR that carries past the election and pushes the real fight into the December lame duck, where shutdown risk actually climbs once the incentive to play nice fades.
+    </div>
+  </div>
+
+  <!-- DEADLINES SECTION (fiscal cliff) -->
   <div class="deadlines-head">
     <h2>The Fiscal Cliff Calendar</h2>
     <div class="asof" id="deadline-asof"></div>
   </div>
   <div id="deadlines-grid" class="deadlines-grid"></div>
 
-  <!-- SCENARIO TRACKER -->
-  <div class="scenario-head">
-    <h2>The Odds at October 1</h2>
-    <div class="asof" id="scenario-asof"></div>
+  <!-- ACTUALLY UNPRECEDENTED -->
+  <div id="historic-section">
+    <div class="historic-head">
+      <h2>Actually Unprecedented</h2>
+      <div class="asof">Cutting through the word "historic"</div>
+    </div>
+    <div class="historic-intro">The chyrons call everything "historic." Most of it isn't — blowing past the deadline, stopgap funding, and giant catch-all bills have been routine for three decades. But a handful of things in this stretch genuinely broke records or precedent. Here's what earns the word.</div>
+    <div class="record-grid">
+      <div class="record-card" style="--rec:#b3261e">
+        <div class="record-tag">Record · Shutdown</div>
+        <div class="record-headline">43 Days</div>
+        <div class="record-body">The fall 2025 shutdown was the longest in U.S. history, breaking the prior record of 35 days set in 2018–19.</div>
+      </div>
+      <div class="record-card" style="--rec:#d2691e">
+        <div class="record-tag">Rare · Second Lapse</div>
+        <div class="record-headline">76-Day DHS Shutdown</div>
+        <div class="record-body">A second, department-specific shutdown in the same cycle pushed Homeland Security funding to Apr. 30, 2026 — extraordinarily long for a single-agency lapse.</div>
+      </div>
+      <div class="record-card" style="--rec:#5b3a78">
+        <div class="record-tag">First in History</div>
+        <div class="record-headline">A Speaker Ousted</div>
+        <div class="record-body">The 2023 motion to vacate that removed Speaker McCarthy was the first successful one ever in the House — a threat that now shadows every deal.</div>
+      </div>
+      <div class="record-card" style="--rec:#2d4a7b">
+        <div class="record-tag">Constitutional Test</div>
+        <div class="record-headline">The Power of the Purse</div>
+        <div class="record-body">Escalating use of rescissions and deferrals is testing the 1974 Impoundment Control Act — who controls money once Congress appropriates it — like nothing since the law passed.</div>
+      </div>
+      <div class="record-card" style="--rec:#b07a16">
+        <div class="record-tag">Structural</div>
+        <div class="record-headline">Razor Majorities</div>
+        <div class="record-body">A House split near 217–212 with vacancies leaves leadership almost no votes to spare, making regular-order appropriations close to impossible.</div>
+      </div>
+      <div class="record-card" style="--rec:#2f6b41">
+        <div class="record-tag">Most Since 2018</div>
+        <div class="record-headline">68 Heading Out</div>
+        <div class="record-body">Sixty-eight members aren't returning to the next Congress — the largest exiting class at this point since 2018, draining dealmaking experience. See the next tab.</div>
+      </div>
+    </div>
+    <div class="routine-note"><strong style="font-style:normal">Not actually historic:</strong> missing the Oct. 1 deadline (the norm since FY1997), funding by continuing resolution, packaging bills into omnibuses, and shutdowns themselves (1980, 1995–96, 2013, 2018–19). The dysfunction is the baseline — only the intensity is new.</div>
   </div>
-  <div class="scenario-q">What happens to FY27 funding at the <b>October 1, 2026</b> deadline — weeks before the midterms? An analyst's handicap. Drag a slider to test your own.</div>
-  <div id="scenario-grid"></div>
-  <div class="scenario-total" id="scenario-total"></div>
-  <div class="scenario-note">
-    These are reasoned estimates from historical base rates and current conditions, not the output of a forecasting model. Since FY1977, Congress has finished all twelve bills on time only four times — last in FY1997. The single likeliest path is a short-term CR that carries past the election and pushes the real fight into the December lame duck, where shutdown risk actually climbs once the incentive to play nice fades.
-  </div>
+
+  </div><!-- /fy-view -->
+
+  <!-- CONGRESS IN FLUX -->
+  <div id="congress-view" style="display:none">
+
+    <!-- DEPARTURES -->
+    <div class="cv-section">
+      <div class="cv-head"><h2>The Departure Lounge</h2><div class="sub">119th Congress · not returning</div></div>
+      <div class="cv-intro">A near-record class is heading for the exits. These members aren't running in November 2026 — but most serve out their terms until January 2027, which means many will help write (or block) the very FY27 funding bills this tracker follows, on their way out the door. Counts are from Ballotpedia, current to spring 2026.</div>
+      <div class="dep-stats">
+        <div class="dep-cell"><div class="n">68</div><div class="l">Total Not Returning</div></div>
+        <div class="dep-cell"><div class="n">57</div><div class="l">House</div></div>
+        <div class="dep-cell"><div class="n">11</div><div class="l">Senate</div></div>
+        <div class="dep-cell"><div class="n">3</div><div class="l">Already Left Early</div></div>
+      </div>
+
+      <div class="dep-group">
+        <h4>Senate — Retiring From Office</h4>
+        <div class="dep-names">
+          <span class="dep-chip"><b>Mitch McConnell</b> <span class="ps-R">R-KY</span></span>
+          <span class="dep-chip"><b>Dick Durbin</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Joni Ernst</b> <span class="ps-R">R-IA</span></span>
+          <span class="dep-chip"><b>Thom Tillis</b> <span class="ps-R">R-NC</span></span>
+          <span class="dep-chip"><b>Jeanne Shaheen</b> <span class="ps-D">D-NH</span></span>
+          <span class="dep-chip"><b>Tina Smith</b> <span class="ps-D">D-MN</span></span>
+          <span class="dep-chip"><b>Gary Peters</b> <span class="ps-D">D-MI</span></span>
+          <span class="dep-chip"><b>Cynthia Lummis</b> <span class="ps-R">R-WY</span></span>
+          <span class="dep-chip"><b>Steve Daines</b> <span class="ps-R">R-MT</span></span>
+          <span class="dep-chip"><span class="meta">+ others — see full list</span></span>
+        </div>
+      </div>
+      <div class="dep-group">
+        <h4>Senate — Running for Another Office</h4>
+        <div class="dep-names">
+          <span class="dep-chip"><b>Tommy Tuberville</b> <span class="ps-R">R-AL</span> <span class="meta">· Governor</span></span>
+        </div>
+      </div>
+      <div class="dep-group">
+        <h4>House — Notable Retirements <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(29 retiring outright)</span></h4>
+        <div class="dep-names">
+          <span class="dep-chip"><b>Jerrold Nadler</b> <span class="ps-D">D-NY</span></span>
+          <span class="dep-chip"><b>Danny Davis</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Dwight Evans</b> <span class="ps-D">D-PA</span></span>
+          <span class="dep-chip"><b>Jan Schakowsky</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Don Bacon</b> <span class="ps-R">R-NE</span></span>
+          <span class="dep-chip"><b>David Schweikert</b> <span class="ps-R">R-AZ</span></span>
+          <span class="dep-chip"><b>Lloyd Doggett</b> <span class="ps-D">D-TX</span></span>
+          <span class="dep-chip"><b>Jodey Arrington</b> <span class="ps-R">R-TX</span></span>
+          <span class="dep-chip"><b>Bonnie Watson Coleman</b> <span class="ps-D">D-NJ</span></span>
+        </div>
+      </div>
+      <div class="cv-note">Full House picture: 57 not seeking re-election — 29 retiring outright, 16 running for the Senate, 11 for governor, and 1 for state attorney general. The member-by-member roster lives at the Ballotpedia link below.</div>
+    </div>
+
+    <!-- PAY -->
+    <div class="cv-section">
+      <div class="cv-head"><h2>What Congress Takes Home</h2><div class="sub">Salary · 2026</div></div>
+      <div class="cv-intro">No — they aren't all paid the same. Rank-and-file pay has been frozen at one number since 2009; leadership earns more by statute.</div>
+      <div class="pay-row"><div class="pay-label">Rank-and-file member<span class="sub">House &amp; Senate · unchanged since 2009</span></div><div class="pay-amt">$174,000</div></div>
+      <div class="pay-row"><div class="pay-label">Floor leaders &amp; President pro tempore<span class="sub">Majority/minority leaders, both chambers</span></div><div class="pay-amt">$193,400</div></div>
+      <div class="pay-row"><div class="pay-label">Speaker of the House<span class="sub">Highest congressional salary</span></div><div class="pay-amt">$223,500</div></div>
+      <div class="pay-context">Salary is the small story. Based on 2024 financial disclosures, the <strong>median net worth</strong> of a member of Congress is about <strong>$1 million</strong>, and more than half are millionaires — against a typical U.S. household worth roughly $100,000. Disclosures report assets in broad ranges, so every net-worth figure here is an estimate, not a bank statement.</div>
+    </div>
+
+    <!-- TOP 10 -->
+    <div class="cv-section">
+      <div class="cv-head"><h2>The Money Caucus</h2><div class="sub">Top 10 by net worth · 2025 est.</div></div>
+      <div class="cv-intro">The ten wealthiest sitting members, by estimated net worth drawn from financial disclosures (compiled from Quiver Quantitative's tracker and 2025 press analyses). Ranges reflect the disclosure brackets.</div>
+
+      <div class="rich-row"><div class="rich-rank top">1</div><div><div class="rich-name">Rick Scott <span class="ps ps-R">R-FL</span></div><div class="rich-source">Healthcare — Columbia/HCA hospital empire</div></div><div class="rich-est">$300–550M</div></div>
+      <div class="rich-row"><div class="rich-rank">2</div><div><div class="rich-name">Darrell Issa <span class="ps ps-R">R-CA</span></div><div class="rich-source">Car-alarm fortune (Viper / Directed Electronics)</div></div><div class="rich-est">~$300M</div></div>
+      <div class="rich-row"><div class="rich-rank">3</div><div><div class="rich-name">Dave McCormick <span class="ps ps-R">R-PA</span></div><div class="rich-source">Hedge fund — former CEO of Bridgewater</div></div><div class="rich-est">$120–290M</div></div>
+      <div class="rich-row"><div class="rich-rank">4</div><div><div class="rich-name">Vern Buchanan <span class="ps ps-R">R-FL</span></div><div class="rich-source">Auto dealerships, real estate</div></div><div class="rich-est">~$249M</div></div>
+      <div class="rich-row"><div class="rich-rank">5</div><div><div class="rich-name">Nancy Pelosi <span class="ps ps-D">D-CA</span></div><div class="rich-source">Investments (real estate, tech via Paul Pelosi)</div></div><div class="rich-est">~$248M</div></div>
+      <div class="rich-row"><div class="rich-rank">6</div><div><div class="rich-name">Mark Warner <span class="ps ps-D">D-VA</span></div><div class="rich-source">Telecom / early cellular (Nextel)</div></div><div class="rich-est">$215–250M</div></div>
+      <div class="rich-row"><div class="rich-rank">7</div><div><div class="rich-name">Michael McCaul <span class="ps ps-R">R-TX</span></div><div class="rich-source">Clear Channel fortune (via marriage)</div></div><div class="rich-est">~$200M</div></div>
+      <div class="rich-row"><div class="rich-rank">8</div><div><div class="rich-name">Dan Goldman <span class="ps ps-D">D-NY</span></div><div class="rich-source">Levi Strauss &amp; Co. heir</div></div><div class="rich-est">$150–180M</div></div>
+      <div class="rich-row"><div class="rich-rank">9</div><div><div class="rich-name">Pete Ricketts <span class="ps ps-R">R-NE</span></div><div class="rich-source">TD Ameritrade family; Cubs co-owner</div></div><div class="rich-est">$79–170M</div></div>
+      <div class="rich-row"><div class="rich-rank">10</div><div><div class="rich-name">Suzan DelBene <span class="ps ps-D">D-WA</span></div><div class="rich-source">Microsoft executive turned legislator</div></div><div class="rich-est">$70–126M</div></div>
+
+      <div class="data-links">
+        <span class="lbl">Verify against the public data</span>
+        <a href="https://disclosures-clerk.house.gov/FinancialDisclosure" target="_blank" rel="noopener">House financial disclosures (Clerk)</a> ·
+        <a href="https://efdsearch.senate.gov/search/" target="_blank" rel="noopener">Senate financial disclosures (EFD)</a> ·
+        <a href="https://www.opensecrets.org/personal-finances" target="_blank" rel="noopener">OpenSecrets · personal finances</a> ·
+        <a href="https://ballotpedia.org/List_of_U.S._Congress_incumbents_who_are_not_running_for_re-election_in_2026" target="_blank" rel="noopener">Ballotpedia · 2026 departures</a> ·
+        <a href="https://www.ntu.org/foundation/tax-page/congress-pay-perks" target="_blank" rel="noopener">Congressional pay (NTU / CRS)</a>
+      </div>
+    </div>
+
+  </div><!-- /congress-view -->
 
   <!-- FOOTER -->
   <div class="ledger-foot">
@@ -668,15 +862,26 @@ function renderLateness(fy) {
 }
 
 function showFY(fy) {
-  document.getElementById('btn-fy26').classList.toggle('active', fy === 'fy26');
-  document.getElementById('btn-fy27').classList.toggle('active', fy === 'fy27');
   document.getElementById('section-title').textContent =
     fy === 'fy26' ? 'FY 2026 — All Twelve Bills' : 'FY 2027 — All Twelve Bills';
   document.getElementById('senate-note').textContent = senateNotes[fy];
+  const fy27 = fy === 'fy27';
+  document.getElementById('scenario-section').style.display = fy27 ? '' : 'none';
+  document.getElementById('historic-section').style.display = fy27 ? '' : 'none';
   renderLegend(fy);
   renderSummary(fy);
   renderBills(fy);
   renderLateness(fy);
+}
+
+function setTab(tab) {
+  const congress = tab === 'congress';
+  document.getElementById('fy-view').style.display = congress ? 'none' : '';
+  document.getElementById('congress-view').style.display = congress ? '' : 'none';
+  document.getElementById('btn-fy26').classList.toggle('active', tab === 'fy26');
+  document.getElementById('btn-fy27').classList.toggle('active', tab === 'fy27');
+  document.getElementById('btn-congress').classList.toggle('active', congress);
+  if (!congress) showFY(tab);
 }
 
 // ---------- DEADLINES ----------
@@ -770,9 +975,9 @@ function updateScenarioTotal() {
 }
 
 // initial render
-showFY('fy27');
 renderDeadlines();
 renderScenarios();
+setTab('fy27');
 </script>
 </body>
 </html>
