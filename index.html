@@ -120,6 +120,16 @@
   .fy-toggle button.active { background: var(--ink); color: var(--paper); }
   .fy-toggle button.active .yr-label { color: var(--paper-2); }
 
+  /* ---------- CR BANNER ---------- */
+  .cr-banner {
+    display: flex; align-items: center; gap: 12px;
+    background: #faf3d4; border: 1px solid #d9b53a; border-left: 4px solid #b3261e;
+    padding: 11px 16px; margin-bottom: 22px;
+    font-size: 13.5px; color: var(--ink); line-height: 1.45;
+  }
+  .cr-banner .cr-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: #b3261e; padding: 4px 8px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .cr-banner b { font-weight: 600; }
+
   /* ---------- SUMMARY STRIP ---------- */
   .summary-strip {
     display: grid;
@@ -255,7 +265,6 @@
   .lateness-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; }
   .lateness-head .asof { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
   .lateness-content { margin-bottom: 40px; }
-
   .ladder-deadline {
     display: flex; justify-content: space-between; align-items: center; gap: 10px;
     border: 1px dashed #b3261e; color: #b3261e;
@@ -269,12 +278,10 @@
   .ladder-fill { height: 100%; border-radius: 2px; min-width: 3px; transition: width 0.6s ease; }
   .ladder-num { font-family: var(--display); font-size: 23px; line-height: 1; text-align: right; }
   .ladder-num span { display: block; font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 3px; }
-
   .tier1 { background: #e6c229; }
   .tier2 { background: #e09b1a; }
   .tier3 { background: #d2691e; }
   .tier4 { background: #d11a0f; animation: redPulse 2s ease-in-out infinite; }
-
   .ladder-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
   .ladder-legend span { display: inline-flex; align-items: center; gap: 6px; }
   .ll-swatch { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
@@ -319,7 +326,6 @@
   .cv-head .sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
   .cv-intro { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 18px; }
   .cv-note { font-size: 12.5px; font-style: italic; color: var(--ink-faint); line-height: 1.55; margin-top: 12px; }
-
   .dep-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 22px; }
   .dep-cell { background: var(--paper); padding: 14px 12px; text-align: center; }
   .dep-cell .n { font-family: var(--display); font-size: 32px; line-height: 1; }
@@ -333,14 +339,12 @@
   .ps-R { color: #a3302d; font-family: var(--mono); font-size: 11px; }
   .ps-D { color: #2d4a7b; font-family: var(--mono); font-size: 11px; }
   .ps-I { color: #5b3a78; font-family: var(--mono); font-size: 11px; }
-
   .pay-row { display: flex; justify-content: space-between; align-items: baseline; padding: 13px 0; border-bottom: 0.5px solid var(--rule); gap: 14px; }
   .pay-label { font-size: 15.5px; font-weight: 600; }
   .pay-label .sub { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-faint); margin-top: 2px; }
   .pay-amt { font-family: var(--display); font-size: 27px; white-space: nowrap; line-height: 1; }
   .pay-context { font-size: 13.5px; color: var(--ink-soft); font-style: italic; margin-top: 16px; line-height: 1.6; }
   .pay-context strong { font-style: normal; font-weight: 600; }
-
   .rich-row { display: grid; grid-template-columns: 38px 1fr auto; gap: 14px; align-items: center; padding: 11px 0; border-bottom: 0.5px solid var(--rule); }
   .rich-rank { font-family: var(--display); font-size: 26px; color: var(--ink-faint); text-align: center; line-height: 1; }
   .rich-rank.top { color: #b3261e; }
@@ -387,11 +391,11 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <div class="eyebrow">Vol. I · No. 2 · An Independent Tracker</div>
+    <div class="eyebrow">Vol. I · No. 3 · An Independent Tracker</div>
     <h1>The Appropriations Ledger</h1>
     <div class="subtitle">A live status report on the twelve annual U.S. appropriations bills</div>
     <div class="masthead-meta">
-      <span id="updated-stamp">Updated · May 30, 2026</span>
+      <span id="updated-stamp">Updated · Jul 29, 2026</span>
       <span>Source · House &amp; Senate Approps · CRFB · Congress.gov</span>
     </div>
   </header>
@@ -413,6 +417,12 @@
   </div>
 
   <div id="fy-view">
+
+  <!-- CR BANNER -->
+  <div id="cr-banner" class="cr-banner">
+    <span class="cr-tag">Latest</span>
+    <span>On July 21 the House passed a stopgap <b>continuing resolution through Dec. 4, 2026</b> (220–205) — a bridge over the Oct. 1 deadline and past the midterms. The Senate has not yet taken it up.</span>
+  </div>
 
   <!-- SUMMARY STRIP -->
   <div id="summary-strip" class="summary-strip"></div>
@@ -447,7 +457,7 @@
     <div id="scenario-grid"></div>
     <div class="scenario-total" id="scenario-total"></div>
     <div class="scenario-note">
-      These are reasoned estimates from historical base rates and current conditions, not the output of a forecasting model. Since FY1977, Congress has finished all twelve bills on time only four times — last in FY1997. The single likeliest path is a short-term CR that carries past the election and pushes the real fight into the December lame duck, where shutdown risk actually climbs once the incentive to play nice fades.
+      Reasoned estimates from historical base rates and current conditions, not a forecasting model. The House has now passed a stopgap CR through Dec. 4 — if the Senate agrees, the Oct. 1 cliff is bridged and the real fight moves to the December lame duck, where shutdown risk tends to climb once the incentive to play nice fades. Since FY1977, Congress has finished all twelve bills on time only four times, last in FY1997.
     </div>
   </div>
 
@@ -489,12 +499,12 @@
       <div class="record-card" style="--rec:#b07a16">
         <div class="record-tag">Structural</div>
         <div class="record-headline">Razor Majorities</div>
-        <div class="record-body">A House split near 217–212 with vacancies leaves leadership almost no votes to spare, making regular-order appropriations close to impossible.</div>
+        <div class="record-body">A House majority of only a handful of seats leaves leadership almost no votes to spare — the July stopgap squeaked through 220–205 — making regular-order appropriations close to impossible.</div>
       </div>
       <div class="record-card" style="--rec:#2f6b41">
-        <div class="record-tag">Most Since 2018</div>
-        <div class="record-headline">68 Heading Out</div>
-        <div class="record-body">Sixty-eight members aren't returning to the next Congress — the largest exiting class at this point since 2018, draining dealmaking experience. See the next tab.</div>
+        <div class="record-tag">Most in 26+ Years</div>
+        <div class="record-headline">70 Heading Out</div>
+        <div class="record-body">Seventy members aren't returning to the next Congress — the most since at least 2000 and 32% above 2024, draining dealmaking experience. See the next tab.</div>
       </div>
     </div>
     <div class="routine-note"><strong style="font-style:normal">Not actually historic:</strong> missing the Oct. 1 deadline (the norm since FY1997), funding by continuing resolution, packaging bills into omnibuses, and shutdowns themselves (1980, 1995–96, 2013, 2018–19). The dysfunction is the baseline — only the intensity is new.</div>
@@ -508,12 +518,12 @@
     <!-- DEPARTURES -->
     <div class="cv-section">
       <div class="cv-head"><h2>The Departure Lounge</h2><div class="sub">119th Congress · not returning</div></div>
-      <div class="cv-intro">A near-record class is heading for the exits. These members aren't running in November 2026 — but most serve out their terms until January 2027, which means many will help write (or block) the very FY27 funding bills this tracker follows, on their way out the door. Counts are from Ballotpedia, current to spring 2026.</div>
+      <div class="cv-intro">A record class is heading for the exits — the most in at least 26 years, and 32% more than in 2024. These members aren't running in November 2026, but most serve out their terms until January 2027, which means many will help write (or block) the very FY27 bills this tracker follows, on their way out the door. Counts are from Ballotpedia; with 49 of 50 filing deadlines passed, they're effectively final.</div>
       <div class="dep-stats">
-        <div class="dep-cell"><div class="n">68</div><div class="l">Total Not Returning</div></div>
-        <div class="dep-cell"><div class="n">57</div><div class="l">House</div></div>
+        <div class="dep-cell"><div class="n">70</div><div class="l">Total Not Returning</div></div>
+        <div class="dep-cell"><div class="n">59</div><div class="l">House</div></div>
         <div class="dep-cell"><div class="n">11</div><div class="l">Senate</div></div>
-        <div class="dep-cell"><div class="n">3</div><div class="l">Already Left Early</div></div>
+        <div class="dep-cell"><div class="n">3</div><div class="l">Left Office Early</div></div>
       </div>
 
       <div class="dep-group">
@@ -528,7 +538,6 @@
           <span class="dep-chip"><b>Gary Peters</b> <span class="ps-D">D-MI</span></span>
           <span class="dep-chip"><b>Cynthia Lummis</b> <span class="ps-R">R-WY</span></span>
           <span class="dep-chip"><b>Steve Daines</b> <span class="ps-R">R-MT</span></span>
-          <span class="dep-chip"><span class="meta">+ others — see full list</span></span>
         </div>
       </div>
       <div class="dep-group">
@@ -538,20 +547,27 @@
         </div>
       </div>
       <div class="dep-group">
-        <h4>House — Notable Retirements <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(29 retiring outright)</span></h4>
+        <h4>House — Notable Departures</h4>
         <div class="dep-names">
+          <span class="dep-chip"><b>Nancy Pelosi</b> <span class="ps-D">D-CA</span></span>
+          <span class="dep-chip"><b>Steny Hoyer</b> <span class="ps-D">D-MD</span></span>
           <span class="dep-chip"><b>Jerrold Nadler</b> <span class="ps-D">D-NY</span></span>
+          <span class="dep-chip"><b>Jan Schakowsky</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Steve Cohen</b> <span class="ps-D">D-TN</span></span>
           <span class="dep-chip"><b>Danny Davis</b> <span class="ps-D">D-IL</span></span>
           <span class="dep-chip"><b>Dwight Evans</b> <span class="ps-D">D-PA</span></span>
-          <span class="dep-chip"><b>Jan Schakowsky</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Julia Brownley</b> <span class="ps-D">D-CA</span></span>
+          <span class="dep-chip"><b>Bonnie Watson Coleman</b> <span class="ps-D">D-NJ</span></span>
+          <span class="dep-chip"><b>Lloyd Doggett</b> <span class="ps-D">D-TX</span></span>
           <span class="dep-chip"><b>Don Bacon</b> <span class="ps-R">R-NE</span></span>
           <span class="dep-chip"><b>David Schweikert</b> <span class="ps-R">R-AZ</span></span>
-          <span class="dep-chip"><b>Lloyd Doggett</b> <span class="ps-D">D-TX</span></span>
+          <span class="dep-chip"><b>Daniel Webster</b> <span class="ps-R">R-FL</span></span>
           <span class="dep-chip"><b>Jodey Arrington</b> <span class="ps-R">R-TX</span></span>
-          <span class="dep-chip"><b>Bonnie Watson Coleman</b> <span class="ps-D">D-NJ</span></span>
+          <span class="dep-chip"><b>Elise Stefanik</b> <span class="ps-R">R-NY</span></span>
+          <span class="dep-chip"><span class="meta">+ more — see full list</span></span>
         </div>
       </div>
-      <div class="cv-note">Full House picture: 57 not seeking re-election — 29 retiring outright, 16 running for the Senate, 11 for governor, and 1 for state attorney general. The member-by-member roster lives at the Ballotpedia link below.</div>
+      <div class="cv-note">The full picture: 70 members not returning — 59 representatives and 11 senators, the most since at least 2000. Some are retiring outright, others are running for the Senate or governor. The member-by-member roster lives at the Ballotpedia link below.</div>
     </div>
 
     <!-- PAY -->
@@ -573,7 +589,7 @@
       <div class="rich-row"><div class="rich-rank">2</div><div><div class="rich-name">Darrell Issa <span class="ps ps-R">R-CA</span></div><div class="rich-source">Car-alarm fortune (Viper / Directed Electronics)</div></div><div class="rich-est">~$300M</div></div>
       <div class="rich-row"><div class="rich-rank">3</div><div><div class="rich-name">Dave McCormick <span class="ps ps-R">R-PA</span></div><div class="rich-source">Hedge fund — former CEO of Bridgewater</div></div><div class="rich-est">$120–290M</div></div>
       <div class="rich-row"><div class="rich-rank">4</div><div><div class="rich-name">Vern Buchanan <span class="ps ps-R">R-FL</span></div><div class="rich-source">Auto dealerships, real estate</div></div><div class="rich-est">~$249M</div></div>
-      <div class="rich-row"><div class="rich-rank">5</div><div><div class="rich-name">Nancy Pelosi <span class="ps ps-D">D-CA</span></div><div class="rich-source">Investments (real estate, tech via Paul Pelosi)</div></div><div class="rich-est">~$248M</div></div>
+      <div class="rich-row"><div class="rich-rank">5</div><div><div class="rich-name">Nancy Pelosi <span class="ps ps-D">D-CA</span></div><div class="rich-source">Investments (real estate, tech via Paul Pelosi) · retiring</div></div><div class="rich-est">~$248M</div></div>
       <div class="rich-row"><div class="rich-rank">6</div><div><div class="rich-name">Mark Warner <span class="ps ps-D">D-VA</span></div><div class="rich-source">Telecom / early cellular (Nextel)</div></div><div class="rich-est">$215–250M</div></div>
       <div class="rich-row"><div class="rich-rank">7</div><div><div class="rich-name">Michael McCaul <span class="ps ps-R">R-TX</span></div><div class="rich-source">Clear Channel fortune (via marriage)</div></div><div class="rich-est">~$200M</div></div>
       <div class="rich-row"><div class="rich-rank">8</div><div><div class="rich-name">Dan Goldman <span class="ps ps-D">D-NY</span></div><div class="rich-source">Levi Strauss &amp; Co. heir</div></div><div class="rich-est">$150–180M</div></div>
@@ -594,7 +610,7 @@
 
   <!-- FOOTER -->
   <div class="ledger-foot">
-    Compiled from the House Appropriations Committee, Senate Appropriations Committee, Congress.gov, and the Committee for a Responsible Federal Budget.<br>
+    Compiled from the House Appropriations Committee, Senate Appropriations Committee, Congress.gov, the Committee for a Responsible Federal Budget, and Ballotpedia.<br>
     An independent tracker — always verify against the
     <a href="https://www.congress.gov/crs-appropriations-status-table" target="_blank" rel="noopener">official Congress.gov status table</a>
     before relying on the data.
@@ -606,12 +622,11 @@
 // Stage indices: 0=Released, 1=Subcommittee, 2=Full Committee, 3=House Floor, 4=Senate Floor, 5=President
 const STAGES = ['Released', 'Subcomm.', 'Full Comm.', 'House', 'Senate', 'Pres.'];
 
-// statusColor maps status keyword -> CSS var
 function statusColor(s) {
   return {
     enacted: 'var(--status-enacted)',
-    house: 'var(--status-house)',
     senate: 'var(--status-senate)',
+    house: 'var(--status-house)',
     committee: 'var(--status-committee)',
     subcommittee: 'var(--status-subcommittee)',
     unreleased: 'var(--status-unreleased)'
@@ -620,8 +635,8 @@ function statusColor(s) {
 function statusLabel(s) {
   return {
     enacted: 'Signed Into Law',
-    house: 'At House Floor',
-    senate: 'At Senate Floor',
+    senate: 'Passed House',
+    house: 'Awaiting House Floor',
     committee: 'Full Committee',
     subcommittee: 'Subcommittee',
     unreleased: 'Not Yet Marked Up'
@@ -650,85 +665,83 @@ const data = {
       action: "Signed within H.R. 5371 (P.L. 119-37), the shutdown-ending package.",
       date: "Nov 12, 2025", num: "H.R. 5371 · P.L. 119-37", url: "https://www.congress.gov/bill/119th-congress/house-bill/5371" },
     { name: "Commerce, Justice, Science", status: "enacted", currentStage: 5, completed: 6, daysLate: 114,
-      action: "Enacted in a three-bill minibus alongside Energy-Water and Interior. House passed 397–28.",
-      date: "Jan 23, 2026", num: "Three-bill minibus", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Enacted in a three-bill minibus (H.R. 6938) alongside Energy-Water and Interior. House passed 397–28.",
+      date: "Jan 23, 2026", num: "H.R. 6938", url: "https://www.congress.gov/bill/119th-congress/house-bill/6938" },
     { name: "Energy & Water Development", status: "enacted", currentStage: 5, completed: 6, daysLate: 114,
-      action: "Enacted in the three-bill minibus with CJS and Interior-Environment.",
-      date: "Jan 23, 2026", num: "Three-bill minibus", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Enacted in the three-bill minibus (H.R. 6938) with CJS and Interior-Environment.",
+      date: "Jan 23, 2026", num: "H.R. 6938", url: "https://www.congress.gov/bill/119th-congress/house-bill/6938" },
     { name: "Interior & Environment", status: "enacted", currentStage: 5, completed: 6, daysLate: 114,
-      action: "Enacted in the three-bill minibus with CJS and Energy-Water.",
-      date: "Jan 23, 2026", num: "Three-bill minibus", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Enacted in the three-bill minibus (H.R. 6938) with CJS and Energy-Water.",
+      date: "Jan 23, 2026", num: "H.R. 6938", url: "https://www.congress.gov/bill/119th-congress/house-bill/6938" },
     { name: "Defense", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
-      action: "Signed in the Consolidated Appropriations Act, 2026, alongside four other bills.",
-      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Signed in the Consolidated Appropriations Act, 2026 (H.R. 7148), alongside four other bills.",
+      date: "Feb 3, 2026", num: "H.R. 7148", url: "https://www.congress.gov/bill/119th-congress/house-bill/7148" },
     { name: "Labor, HHS, Education", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
-      action: "Signed in the Consolidated Appropriations Act, 2026.",
-      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Signed in the Consolidated Appropriations Act, 2026 (H.R. 7148).",
+      date: "Feb 3, 2026", num: "H.R. 7148", url: "https://www.congress.gov/bill/119th-congress/house-bill/7148" },
     { name: "Financial Services & Gen. Gov't", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
-      action: "Signed in the Consolidated Appropriations Act, 2026.",
-      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Signed in the Consolidated Appropriations Act, 2026 (H.R. 7148).",
+      date: "Feb 3, 2026", num: "H.R. 7148", url: "https://www.congress.gov/bill/119th-congress/house-bill/7148" },
     { name: "National Security & State Dept.", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
-      action: "Signed in the Consolidated Appropriations Act, 2026.",
-      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Signed in the Consolidated Appropriations Act, 2026 (H.R. 7148).",
+      date: "Feb 3, 2026", num: "H.R. 7148", url: "https://www.congress.gov/bill/119th-congress/house-bill/7148" },
     { name: "Transportation & HUD", status: "enacted", currentStage: 5, completed: 6, daysLate: 125,
-      action: "Signed in the Consolidated Appropriations Act, 2026.",
-      date: "Feb 3, 2026", num: "Consolidated Approps. 2026", url: "https://www.congress.gov/crs-appropriations-status-table" },
+      action: "Signed in the Consolidated Appropriations Act, 2026 (H.R. 7148).",
+      date: "Feb 3, 2026", num: "H.R. 7148", url: "https://www.congress.gov/bill/119th-congress/house-bill/7148" },
     { name: "Homeland Security", status: "enacted", currentStage: 5, completed: 6, daysLate: 211,
-      action: "The last FY26 bill to land — roughly seven months late. Signed as P.L. 119-86, ending the 76-day DHS shutdown that began Feb 14.",
-      date: "Apr 30, 2026", num: "P.L. 119-86", url: "https://www.congress.gov/crs-appropriations-status-table" }
+      action: "The last FY26 bill to land — roughly seven months late. H.R. 7147 ended the 76-day DHS shutdown; ICE and border funding were stripped out and pushed to reconciliation.",
+      date: "Apr 30, 2026", num: "H.R. 7147", url: "https://www.congress.gov/bill/119th-congress/house-bill/7147" }
   ],
   fy27: [
-    { name: "Military Construction, VA", status: "house", currentStage: 3, completed: 3,
-      action: "Cleared subcommittee (Apr 17) and full committee (Apr 21). The first FY27 bill brought to the House floor.",
-      date: "Apr 21, 2026", num: "H.R. 8469", url: "https://www.congress.gov/bill/119th-congress/house-bill/8469" },
-    { name: "Financial Services & Gen. Gov't", status: "committee", currentStage: 2, completed: 3,
-      action: "Approved by the full House Appropriations Committee following its April 21–22 markup.",
-      date: "Apr 22, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/financial-services-and-general-government-0/related-documents" },
-    { name: "National Security & State Dept.", status: "committee", currentStage: 2, completed: 3,
-      action: "Approved by the full House Appropriations Committee at its April 28 markup.",
-      date: "Apr 28, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/national-security-department-state-and-related-programs/related-documents" },
-    { name: "Agriculture, Rural Development, FDA", status: "committee", currentStage: 2, completed: 3,
-      action: "Approved by the full House Appropriations Committee (markup Apr 28, continued Apr 29).",
-      date: "Apr 29, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies/related-documents" },
-    { name: "Commerce, Justice, Science", status: "committee", currentStage: 2, completed: 3,
-      action: "Subcommittee markup Apr 30; approved by full committee May 13.",
-      date: "May 13, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/commerce-justice-science-and-related-agencies-0/related-documents" },
-    { name: "Legislative Branch", status: "committee", currentStage: 2, completed: 3,
-      action: "Subcommittee markup Apr 30; full committee markup May 13–14. Allocation: $7.3B.",
-      date: "May 14, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/legislative-branch-0/related-documents" },
-    { name: "Energy & Water Development", status: "committee", currentStage: 2, completed: 3,
-      action: "Subcommittee markup May 15; approved by full committee May 20.",
-      date: "May 20, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/energy-and-water-development-and-related-agencies-0/related-documents" },
-    { name: "Interior & Environment", status: "subcommittee", currentStage: 1, completed: 2,
-      action: "Cleared subcommittee May 21. Full committee markup scheduled June 3.",
-      date: "May 21, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/interior-environment-and-related-agencies-0/related-documents" },
-    { name: "Transportation & HUD", status: "subcommittee", currentStage: 1, completed: 2,
-      action: "Released and cleared subcommittee May 21. Full committee markup scheduled June 4.",
-      date: "May 21, 2026", num: "FY27 House", url: "https://appropriations.house.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies/related-documents" },
-    { name: "Labor, HHS, Education", status: "unreleased", currentStage: 0, completed: 0,
-      action: "Subcommittee markup scheduled June 5; full committee June 9. Text not yet public.",
-      date: "Due Jun 5, 2026", num: "FY27 House", url: "https://appropriations.house.gov/fy27-information/fy27-markup-schedule" },
-    { name: "Homeland Security", status: "unreleased", currentStage: 0, completed: 0,
-      action: "Subcommittee markup scheduled June 5; full committee June 10. Text not yet public.",
-      date: "Due Jun 5, 2026", num: "FY27 House", url: "https://appropriations.house.gov/fy27-information/fy27-markup-schedule" },
-    { name: "Defense", status: "unreleased", currentStage: 0, completed: 0,
-      action: "Classified subcommittee markup scheduled June 11; full committee June 24. Last to move.",
-      date: "Due Jun 11, 2026", num: "FY27 House", url: "https://appropriations.house.gov/fy27-information/fy27-markup-schedule" }
+    { name: "Military Construction, VA", status: "senate", currentStage: 4, completed: 4,
+      action: "Passed the House 400–15 on May 15 — the first FY27 bill to clear the floor. Now awaiting Senate action.",
+      date: "May 15, 2026", num: "H.R. 8469", url: "https://www.congress.gov/bill/119th-congress/house-bill/8469" },
+    { name: "Agriculture, Rural Development, FDA", status: "senate", currentStage: 4, completed: 4,
+      action: "Passed the House 213–210 on June 4, nearly on party lines. Awaiting the Senate.",
+      date: "Jun 4, 2026", num: "FY27 · House-passed", url: "https://clerk.house.gov/Votes/2026205" },
+    { name: "National Security & State Dept.", status: "senate", currentStage: 4, completed: 4,
+      action: "Passed the House 217–209 on July 15. Awaiting the Senate.",
+      date: "Jul 15, 2026", num: "FY27 · House-passed", url: "https://clerk.house.gov/Votes/2026247" },
+    { name: "Defense", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee June 24 (34–27). Awaiting a House floor vote.",
+      date: "Jun 24, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-defense-appropriations-act" },
+    { name: "Homeland Security", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee June 11 (34–27). Awaiting a House floor vote.",
+      date: "Jun 11, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-homeland-security-appropriations-act" },
+    { name: "Labor, HHS, Education", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee June 9 (34–28). Awaiting a House floor vote.",
+      date: "Jun 9, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-labor-health-and-human-services-and-education" },
+    { name: "Interior & Environment", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee June 3 (35–27). Awaiting a House floor vote.",
+      date: "Jun 3, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-interior-and-environment-appropriations-act" },
+    { name: "Transportation & HUD", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee June 3 (34–27) on a party-line vote. Awaiting a House floor vote.",
+      date: "Jun 3, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-transportation-housing-and-urban-development" },
+    { name: "Energy & Water Development", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee May 20 (34–25). Awaiting a House floor vote.",
+      date: "May 20, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-energy-and-water-development-appropriations-act" },
+    { name: "Legislative Branch", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee May 20 (34–28). Awaiting a House floor vote.",
+      date: "May 20, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-legislative-branch-appropriations-act" },
+    { name: "Commerce, Justice, Science", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee May 13 (32–28). Awaiting a House floor vote.",
+      date: "May 13, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-commerce-justice-science-and-related-agencies" },
+    { name: "Financial Services & Gen. Gov't", status: "house", currentStage: 3, completed: 3,
+      action: "Approved by the full committee April 22 (34–28). Awaiting a House floor vote.",
+      date: "Apr 22, 2026", num: "FY27 House", url: "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-financial-services-and-general-government" }
   ]
 };
 
 const senateNotes = {
   fy26: "FY26 is a closed cycle — all twelve bills are law. But none arrived on time: funding ran through two shutdowns (43 days in fall 2025, 76 days at DHS into spring 2026), continuing resolutions, and minibus packages rather than twelve standalone bills.",
-  fy27: "SENATE STATUS — The Senate has not formally begun FY27 markups. Its subcommittees are holding budget-request hearings; Chair Susan Collins has said she aims to complete all twelve Senate markups before the end of June. Every figure below is House-side. With a midterm year and limited floor days, the calendar is tight."
+  fy27: "SENATE STATUS — As of late July, the Senate has still not marked up a single FY27 bill. Talks stalled over top-line levels; Republicans are weighing releasing bills without bipartisan buy-in, and the committee is set to miss its goal of clearing all twelve before the August recess. Every stage shown below is House-side."
 };
 
 function renderSummary(fy) {
   const bills = data[fy];
   const enacted = bills.filter(b => b.status === 'enacted').length;
-  const house = bills.filter(b => b.status === 'house').length;
-  const committee = bills.filter(b => b.status === 'committee').length;
-  const sub = bills.filter(b => b.status === 'subcommittee').length;
-  const unrel = bills.filter(b => b.status === 'unreleased').length;
+  const passedHouse = bills.filter(b => b.status === 'senate').length;
+  const thruCmte = bills.filter(b => b.currentStage >= 2).length;
 
   let cells;
   if (fy === 'fy26') {
@@ -740,11 +753,10 @@ function renderSummary(fy) {
     ];
   } else {
     cells = [
-      { num: house, lbl: 'At House Floor' },
-      { num: committee, lbl: 'Full Committee' },
-      { num: sub, lbl: 'Subcommittee' },
-      { num: unrel, lbl: 'Not Yet Up' },
-      { num: 0, lbl: 'Senate Acted' }
+      { num: passedHouse, lbl: 'Passed House' },
+      { num: thruCmte, lbl: 'Thru Committee' },
+      { num: 0, lbl: 'Senate Acted' },
+      { num: 0, lbl: 'Enacted' }
     ];
   }
   document.getElementById('summary-strip').innerHTML = cells.map(c =>
@@ -800,12 +812,9 @@ function renderLegend(fy) {
       <span><span class="legend-dot" style="background:${lateFill[4]}"></span>180+ days</span>`;
   } else {
     el.innerHTML = `
-      <span><span class="legend-dot" style="background:var(--status-enacted)"></span>Enacted</span>
-      <span><span class="legend-dot" style="background:var(--status-house)"></span>House</span>
-      <span><span class="legend-dot" style="background:var(--status-senate)"></span>Senate</span>
-      <span><span class="legend-dot" style="background:var(--status-committee)"></span>Full Comm.</span>
-      <span><span class="legend-dot" style="background:var(--status-subcommittee)"></span>Subcomm.</span>
-      <span><span class="legend-dot" style="background:var(--status-unreleased)"></span>Unreleased</span>`;
+      <span><span class="legend-dot" style="background:var(--status-senate)"></span>Passed House</span>
+      <span><span class="legend-dot" style="background:var(--status-house)"></span>Awaiting House Floor</span>
+      <span><span class="legend-dot" style="background:var(--status-enacted)"></span>Enacted</span>`;
   }
 }
 
@@ -843,20 +852,20 @@ function renderLateness(fy) {
       <p class="ladder-foot-note">Not one of the twelve bills was signed before the fiscal year began. The shortest delay was 42 days; the longest — Homeland Security — ran 211 days, roughly seven months past the deadline, the product of a 76-day partial shutdown.</p>`;
   } else {
     title.textContent = 'The Countdown to FY27';
-    sub.textContent = 'No FY27 bill has cleared either chamber';
+    sub.textContent = 'No FY27 bill has cleared the Senate';
     const days = daysUntil('2026-10-01');
-    const throughCmte = data.fy27.filter(b => b.currentStage >= 2).length;
-    const enacted = data.fy27.filter(b => b.status === 'enacted').length;
+    const passedHouse = data.fy27.filter(b => b.status === 'senate').length;
+    const thruCmte = data.fy27.filter(b => b.currentStage >= 2).length;
     content.innerHTML = `
       <div class="fy27-count">
         <div class="big">${days}</div>
         <div class="big-lbl">Days Until the October 1, 2026 Deadline</div>
         <div class="fy27-stats">
-          <div class="fy27-stat"><div class="n">${enacted} / 12</div><div class="l">Enacted</div></div>
-          <div class="fy27-stat"><div class="n">${throughCmte} / 12</div><div class="l">Through House Cmte.</div></div>
+          <div class="fy27-stat"><div class="n">${passedHouse} / 12</div><div class="l">Passed House</div></div>
+          <div class="fy27-stat"><div class="n">${thruCmte} / 12</div><div class="l">Through House Cmte.</div></div>
           <div class="fy27-stat"><div class="n">0 / 12</div><div class="l">Senate Acted</div></div>
         </div>
-        <p class="fy27-compare">At the equivalent point in the FY26 cycle, both chambers had passed zero of twelve bills on the floor — the path that ended in a 43-day shutdown. Since FY1997, Congress has finished all twelve on time exactly zero times.</p>
+        <p class="fy27-compare">The House has passed three bills and, on July 21, a stopgap CR through Dec. 4 — but the Senate hasn't marked up a single bill. A funding bridge past the election, with the real fight deferred to December, is the likeliest path. Since FY1997, Congress has finished all twelve on time exactly zero times.</p>
       </div>`;
   }
 }
@@ -866,6 +875,7 @@ function showFY(fy) {
     fy === 'fy26' ? 'FY 2026 — All Twelve Bills' : 'FY 2027 — All Twelve Bills';
   document.getElementById('senate-note').textContent = senateNotes[fy];
   const fy27 = fy === 'fy27';
+  document.getElementById('cr-banner').style.display = fy27 ? '' : 'none';
   document.getElementById('scenario-section').style.display = fy27 ? '' : 'none';
   document.getElementById('historic-section').style.display = fy27 ? '' : 'none';
   renderLegend(fy);
@@ -886,13 +896,12 @@ function setTab(tab) {
 
 // ---------- DEADLINES ----------
 const deadlines = [
-  { date: '2026-06-30', label: 'IRA Home & Alt-Fuel Refueling Credits Expire', critical: false },
-  { date: '2026-07-24', label: 'Section 122 Tariff Authority Expires', critical: false },
   { date: '2026-09-30', label: 'FY26 Ends — FY27 Funding Required', critical: true },
   { date: '2026-09-30', label: 'Surface Transportation Authorization Expires', critical: false },
   { date: '2026-09-30', label: 'Farm Bill Provisions Expire', critical: false },
   { date: '2026-09-30', label: 'Export-Import Bank Authorization Expires', critical: false },
   { date: '2026-09-30', label: 'VA Health Care Extenders Expire', critical: false },
+  { date: '2026-12-04', label: 'FY27 Stopgap (CR) Expires — if enacted', critical: true },
   { date: '2026-12-31', label: 'Medicare Physician Payment Increase Expires', critical: false },
   { date: '2027-06-15', label: 'Debt Ceiling Reached (CRFB est.)', critical: true },
   { date: '2027-09-30', label: 'FY27 Ends — FY28 Funding Required', critical: true }
@@ -933,16 +942,16 @@ document.getElementById('updated-stamp').textContent =
 
 // ---------- SCENARIO TRACKER ----------
 const scenarios = [
-  { label: 'Clean CR past the election', color: 'var(--status-house)', prob: 58,
-    rationale: 'A short-term continuing resolution funds everything at current levels and dumps the real fight into the December lame duck. The default move in a midterm year — nobody wants tough votes or a shutdown to campaign on.' },
-  { label: 'Laddered / partial CR', color: 'var(--status-committee)', prob: 18,
-    rationale: 'A handful of the bills furthest along (MilCon-VA, maybe a small minibus) get enacted; the rest ride a CR with staggered expiration dates. A tell that leadership has given up on finishing on time.' },
-  { label: 'Brief shutdown, then CR', color: 'var(--status-senate)', prob: 11,
-    rationale: 'Talks slip past midnight Sept 30, a short lapse (a few days to a week) forces a deal. Painful but politically survivable this close to an election.' },
-  { label: 'Extended shutdown (> 1 week)', color: '#a3302d', prob: 8,
-    rationale: 'A genuine standoff with no quick offramp. Less likely right before voters decide — but FY26 just proved long lapses are back on the menu.' },
-  { label: 'Complete budget, on time', color: 'var(--status-enacted)', prob: 5,
-    rationale: 'All twelve bills (or a full-year omnibus) signed before Oct 1. Would be the first time since FY1997. The House pace is real, but the Senate has not started and needs 60 votes per bill.' }
+  { label: 'Clean CR past the election', color: 'var(--status-house)', prob: 68,
+    rationale: 'The House already passed a stopgap through Dec. 4 (220–205 on July 21). If the Senate follows, funding bridges past the election and the real fight moves to the December lame duck. The default midterm-year move.' },
+  { label: 'Laddered / partial CR', color: 'var(--status-committee)', prob: 13,
+    rationale: 'A few of the House-passed bills (MilCon-VA, Agriculture, National Security-State) get enacted; the rest ride a CR with staggered dates. A tell that leadership has given up on finishing on time.' },
+  { label: 'Brief shutdown, then CR', color: 'var(--status-senate)', prob: 10,
+    rationale: 'The Senate stalls or amends the CR, talks slip past midnight Sept 30, and a short lapse forces a deal. Painful but survivable this close to an election.' },
+  { label: 'Extended shutdown (> 1 week)', color: '#a3302d', prob: 6,
+    rationale: 'A genuine standoff with no quick offramp — the ACA-subsidy fight that drove the FY26 shutdowns could reignite. Less likely right before voters decide, but not off the table.' },
+  { label: 'Complete budget, on time', color: 'var(--status-enacted)', prob: 3,
+    rationale: 'All twelve bills (or a full-year omnibus) signed before Oct 1. Would be the first time since FY1997 — and the Senate has not passed a single bill, so this is now a long shot.' }
 ];
 
 function renderScenarios() {
