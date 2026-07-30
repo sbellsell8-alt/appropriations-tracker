@@ -319,6 +319,15 @@
   .record-body { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
   .routine-note { font-size: 12.5px; font-style: italic; color: var(--ink-faint); border-top: 0.5px solid var(--rule); padding-top: 12px; line-height: 1.55; margin-bottom: 40px; }
 
+  /* ---------- SHUTDOWN IMPACT ---------- */
+  .impact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .impact-card { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--imp, var(--ink)); padding: 13px 15px; }
+  .impact-who { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--imp, var(--ink-faint)); font-weight: 600; margin-bottom: 6px; }
+  .impact-what { font-size: 13.5px; color: var(--ink-soft); line-height: 1.45; }
+  .impact-what b { color: var(--ink); font-weight: 600; }
+  .still-note { font-size: 13px; background: var(--paper-2); border-left: 3px solid var(--status-enacted); padding: 12px 15px; line-height: 1.55; margin-bottom: 40px; }
+  .still-note b { font-weight: 600; color: var(--ink); }
+
   /* ---------- CONGRESS IN FLUX ---------- */
   .cv-section { margin-bottom: 42px; }
   .cv-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin: 8px 0 16px; flex-wrap: wrap; gap: 8px; }
@@ -503,11 +512,47 @@
       </div>
       <div class="record-card" style="--rec:#2f6b41">
         <div class="record-tag">Most in 26+ Years</div>
-        <div class="record-headline">70 Heading Out</div>
-        <div class="record-body">Seventy members aren't returning to the next Congress — the most since at least 2000 and 32% above 2024, draining dealmaking experience. See the next tab.</div>
+        <div class="record-headline">69 Heading Out</div>
+        <div class="record-body">Sixty-nine members aren't seeking re-election — the most since at least 2000 and 32% above 2024, draining dealmaking experience. See the next tab.</div>
       </div>
     </div>
     <div class="routine-note"><strong style="font-style:normal">Not actually historic:</strong> missing the Oct. 1 deadline (the norm since FY1997), funding by continuing resolution, packaging bills into omnibuses, and shutdowns themselves (1980, 1995–96, 2013, 2018–19). The dysfunction is the baseline — only the intensity is new.</div>
+  </div>
+
+  <!-- SHUTDOWN IMPACT -->
+  <div id="shutdown-section">
+    <div class="historic-head">
+      <h2>A Shutdown &amp; You</h2>
+      <div class="asof">What actually stops for the public</div>
+    </div>
+    <div class="historic-intro">Skip the politics — here's the direct, everyday impact if funding lapses and the government shuts down. Find yourself below.</div>
+    <div class="impact-grid">
+      <div class="impact-card" style="--imp:#b3261e">
+        <div class="impact-who">If you fly</div>
+        <div class="impact-what">TSA screeners and air-traffic controllers are forced to work <b>without pay</b>. As absences climb, security lines and flight delays grow — 1,000+ TSA officers quit during the 76-day DHS shutdown.</div>
+      </div>
+      <div class="impact-card" style="--imp:#b3261e">
+        <div class="impact-who">If you get SNAP or WIC</div>
+        <div class="impact-what">Food aid is at risk. In the 2025 shutdown, roughly <b>42 million people</b> faced losing full SNAP benefits, and WIC support for mothers and infants ran short.</div>
+      </div>
+      <div class="impact-card" style="--imp:#d2691e">
+        <div class="impact-who">If you're a federal worker or contractor</div>
+        <div class="impact-what">Around <b>2 million</b> federal workers are furloughed or work unpaid. Employees are owed back pay by law; <b>contractors usually get nothing</b>.</div>
+      </div>
+      <div class="impact-card" style="--imp:#b07a16">
+        <div class="impact-who">If you need a federal loan</div>
+        <div class="impact-what">New <b>Small Business Administration</b> loans and new <b>farm loans</b> freeze, and no new federal contracts are signed — a direct hit to small businesses and growers.</div>
+      </div>
+      <div class="impact-card" style="--imp:#2d4a7b">
+        <div class="impact-who">If you're visiting a park or museum</div>
+        <div class="impact-what">National parks and the <b>Smithsonian</b> close or go unstaffed; trash, restrooms, and rangers disappear even where gates stay open.</div>
+      </div>
+      <div class="impact-card" style="--imp:#5b3a78">
+        <div class="impact-who">If you need a passport or IRS help</div>
+        <div class="impact-what">Passport and visa processing can <b>slow</b>, and IRS phone lines and taxpayer help largely go dark — refunds and paperwork back up.</div>
+      </div>
+    </div>
+    <div class="still-note"><b>What keeps coming:</b> Social Security and Medicare payments, VA medical care, the U.S. mail, and active-duty troops on the job — all funded outside the annual bills. The catch: many of the people delivering those services work <b>without a paycheck</b> until the shutdown ends.</div>
   </div>
 
   </div><!-- /fy-view -->
@@ -520,14 +565,14 @@
       <div class="cv-head"><h2>The Departure Lounge</h2><div class="sub">119th Congress · not returning</div></div>
       <div class="cv-intro">A record class is heading for the exits — the most in at least 26 years, and 32% more than in 2024. These members aren't running in November 2026, but most serve out their terms until January 2027, which means many will help write (or block) the very FY27 bills this tracker follows, on their way out the door. Counts are from Ballotpedia; with 49 of 50 filing deadlines passed, they're effectively final.</div>
       <div class="dep-stats">
-        <div class="dep-cell"><div class="n">70</div><div class="l">Total Not Returning</div></div>
-        <div class="dep-cell"><div class="n">59</div><div class="l">House</div></div>
+        <div class="dep-cell"><div class="n">69</div><div class="l">Not Seeking Re-election</div></div>
+        <div class="dep-cell"><div class="n">58</div><div class="l">House</div></div>
         <div class="dep-cell"><div class="n">11</div><div class="l">Senate</div></div>
-        <div class="dep-cell"><div class="n">3</div><div class="l">Left Office Early</div></div>
+        <div class="dep-cell"><div class="n">15</div><div class="l">Also Left Early</div></div>
       </div>
 
       <div class="dep-group">
-        <h4>Senate — Retiring From Office</h4>
+        <h4>Senate — Retiring From Office <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(10)</span></h4>
         <div class="dep-names">
           <span class="dep-chip"><b>Mitch McConnell</b> <span class="ps-R">R-KY</span></span>
           <span class="dep-chip"><b>Dick Durbin</b> <span class="ps-D">D-IL</span></span>
@@ -538,36 +583,94 @@
           <span class="dep-chip"><b>Gary Peters</b> <span class="ps-D">D-MI</span></span>
           <span class="dep-chip"><b>Cynthia Lummis</b> <span class="ps-R">R-WY</span></span>
           <span class="dep-chip"><b>Steve Daines</b> <span class="ps-R">R-MT</span></span>
+          <span class="dep-chip"><b>Alan Armstrong</b> <span class="ps-R">R-OK</span></span>
         </div>
       </div>
       <div class="dep-group">
-        <h4>Senate — Running for Another Office</h4>
+        <h4>Senate — Running for Governor <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(1)</span></h4>
         <div class="dep-names">
-          <span class="dep-chip"><b>Tommy Tuberville</b> <span class="ps-R">R-AL</span> <span class="meta">· Governor</span></span>
+          <span class="dep-chip"><b>Tommy Tuberville</b> <span class="ps-R">R-AL</span></span>
         </div>
       </div>
       <div class="dep-group">
-        <h4>House — Notable Departures</h4>
+        <h4>House — Retiring From Office <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(31)</span></h4>
         <div class="dep-names">
           <span class="dep-chip"><b>Nancy Pelosi</b> <span class="ps-D">D-CA</span></span>
           <span class="dep-chip"><b>Steny Hoyer</b> <span class="ps-D">D-MD</span></span>
           <span class="dep-chip"><b>Jerrold Nadler</b> <span class="ps-D">D-NY</span></span>
           <span class="dep-chip"><b>Jan Schakowsky</b> <span class="ps-D">D-IL</span></span>
           <span class="dep-chip"><b>Steve Cohen</b> <span class="ps-D">D-TN</span></span>
-          <span class="dep-chip"><b>Danny Davis</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Danny K. Davis</b> <span class="ps-D">D-IL</span></span>
           <span class="dep-chip"><b>Dwight Evans</b> <span class="ps-D">D-PA</span></span>
           <span class="dep-chip"><b>Julia Brownley</b> <span class="ps-D">D-CA</span></span>
           <span class="dep-chip"><b>Bonnie Watson Coleman</b> <span class="ps-D">D-NJ</span></span>
           <span class="dep-chip"><b>Lloyd Doggett</b> <span class="ps-D">D-TX</span></span>
+          <span class="dep-chip"><b>Frederica Wilson</b> <span class="ps-D">D-FL</span></span>
+          <span class="dep-chip"><b>Marc Veasey</b> <span class="ps-D">D-TX</span></span>
+          <span class="dep-chip"><b>Nydia Velázquez</b> <span class="ps-D">D-NY</span></span>
+          <span class="dep-chip"><b>Jesús "Chuy" García</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Jared Golden</b> <span class="ps-D">D-ME</span></span>
+          <span class="dep-chip"><b>Vern Buchanan</b> <span class="ps-R">R-FL</span></span>
+          <span class="dep-chip"><b>Darrell Issa</b> <span class="ps-R">R-CA</span></span>
+          <span class="dep-chip"><b>Michael McCaul</b> <span class="ps-R">R-TX</span></span>
           <span class="dep-chip"><b>Don Bacon</b> <span class="ps-R">R-NE</span></span>
-          <span class="dep-chip"><b>David Schweikert</b> <span class="ps-R">R-AZ</span></span>
           <span class="dep-chip"><b>Daniel Webster</b> <span class="ps-R">R-FL</span></span>
           <span class="dep-chip"><b>Jodey Arrington</b> <span class="ps-R">R-TX</span></span>
           <span class="dep-chip"><b>Elise Stefanik</b> <span class="ps-R">R-NY</span></span>
-          <span class="dep-chip"><span class="meta">+ more — see full list</span></span>
+          <span class="dep-chip"><b>Sam Graves</b> <span class="ps-R">R-MO</span></span>
+          <span class="dep-chip"><b>Burgess Owens</b> <span class="ps-R">R-UT</span></span>
+          <span class="dep-chip"><b>Ryan Zinke</b> <span class="ps-R">R-MT</span></span>
+          <span class="dep-chip"><b>Mark Amodei</b> <span class="ps-R">R-NV</span></span>
+          <span class="dep-chip"><b>Barry Loudermilk</b> <span class="ps-R">R-GA</span></span>
+          <span class="dep-chip"><b>Neal Dunn</b> <span class="ps-R">R-FL</span></span>
+          <span class="dep-chip"><b>Dan Newhouse</b> <span class="ps-R">R-WA</span></span>
+          <span class="dep-chip"><b>Troy Nehls</b> <span class="ps-R">R-TX</span></span>
+          <span class="dep-chip"><b>Morgan Luttrell</b> <span class="ps-R">R-TX</span></span>
         </div>
       </div>
-      <div class="cv-note">The full picture: 70 members not returning — 59 representatives and 11 senators, the most since at least 2000. Some are retiring outright, others are running for the Senate or governor. The member-by-member roster lives at the Ballotpedia link below.</div>
+      <div class="dep-group">
+        <h4>House — Running for the Senate <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(16)</span></h4>
+        <div class="dep-names">
+          <span class="dep-chip"><b>Jasmine Crockett</b> <span class="ps-D">D-TX</span></span>
+          <span class="dep-chip"><b>Seth Moulton</b> <span class="ps-D">D-MA</span></span>
+          <span class="dep-chip"><b>Raja Krishnamoorthi</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Robin Kelly</b> <span class="ps-D">D-IL</span></span>
+          <span class="dep-chip"><b>Angie Craig</b> <span class="ps-D">D-MN</span></span>
+          <span class="dep-chip"><b>Haley Stevens</b> <span class="ps-D">D-MI</span></span>
+          <span class="dep-chip"><b>Chris Pappas</b> <span class="ps-D">D-NH</span></span>
+          <span class="dep-chip"><b>Kevin Hern</b> <span class="ps-R">R-OK</span></span>
+          <span class="dep-chip"><b>Julia Letlow</b> <span class="ps-R">R-LA</span></span>
+          <span class="dep-chip"><b>Harriet Hageman</b> <span class="ps-R">R-WY</span></span>
+          <span class="dep-chip"><b>Wesley Hunt</b> <span class="ps-R">R-TX</span></span>
+          <span class="dep-chip"><b>Ashley Hinson</b> <span class="ps-R">R-IA</span></span>
+          <span class="dep-chip"><b>Barry Moore</b> <span class="ps-R">R-AL</span></span>
+          <span class="dep-chip"><b>Mike Collins</b> <span class="ps-R">R-GA</span></span>
+          <span class="dep-chip"><b>Buddy Carter</b> <span class="ps-R">R-GA</span></span>
+          <span class="dep-chip"><b>Andy Barr</b> <span class="ps-R">R-KY</span></span>
+        </div>
+      </div>
+      <div class="dep-group">
+        <h4>House — Running for Governor <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(10)</span></h4>
+        <div class="dep-names">
+          <span class="dep-chip"><b>David Schweikert</b> <span class="ps-R">R-AZ</span></span>
+          <span class="dep-chip"><b>Andy Biggs</b> <span class="ps-R">R-AZ</span></span>
+          <span class="dep-chip"><b>Tom Tiffany</b> <span class="ps-R">R-WI</span></span>
+          <span class="dep-chip"><b>Nancy Mace</b> <span class="ps-R">R-SC</span></span>
+          <span class="dep-chip"><b>Ralph Norman</b> <span class="ps-R">R-SC</span></span>
+          <span class="dep-chip"><b>Dusty Johnson</b> <span class="ps-R">R-SD</span></span>
+          <span class="dep-chip"><b>Randy Feenstra</b> <span class="ps-R">R-IA</span></span>
+          <span class="dep-chip"><b>John James</b> <span class="ps-R">R-MI</span></span>
+          <span class="dep-chip"><b>John Rose</b> <span class="ps-R">R-TN</span></span>
+          <span class="dep-chip"><b>Byron Donalds</b> <span class="ps-R">R-FL</span></span>
+        </div>
+      </div>
+      <div class="dep-group">
+        <h4>House — Running for Attorney General <span style="text-transform:none;font-weight:400;color:var(--ink-faint)">(1)</span></h4>
+        <div class="dep-names">
+          <span class="dep-chip"><b>Chip Roy</b> <span class="ps-R">R-TX</span></span>
+        </div>
+      </div>
+      <div class="cv-note">Roster from Ballotpedia (as of early July; the count has since ticked toward 70). Separately, 15 members — three senators and twelve representatives — left office early via resignation or death during 2025–26 and aren't included above.</div>
     </div>
 
     <!-- PAY -->
@@ -580,21 +683,41 @@
       <div class="pay-context">Salary is the small story. Based on 2024 financial disclosures, the <strong>median net worth</strong> of a member of Congress is about <strong>$1 million</strong>, and more than half are millionaires — against a typical U.S. household worth roughly $100,000. Disclosures report assets in broad ranges, so every net-worth figure here is an estimate, not a bank statement.</div>
     </div>
 
+    <!-- RETIREMENT BENEFITS -->
+    <div class="cv-section">
+      <div class="cv-head"><h2>What "Retiring" Pays</h2><div class="sub">Benefits after Congress</div></div>
+      <div class="cv-intro">The persistent myth is that members collect their full salary — and free health care — for life. They don't. What they actually get is the standard federal-employee package: a formula pension they pay into, a 401(k)-style match, Social Security, and the option (not a gift) to keep buying federal health coverage.</div>
+      <div class="pay-row"><div class="pay-label">FERS pension<span class="sub">Vests at 5 years of service; payable at 62, earlier with more years</span></div><div class="pay-amt">≈ $45K/yr</div></div>
+      <div class="pay-row"><div class="pay-label">Thrift Savings Plan<span class="sub">401(k)-style; automatic 1% plus a match, kept for life</span></div><div class="pay-amt">up to 5%</div></div>
+      <div class="pay-row"><div class="pay-label">Social Security<span class="sub">Members pay in like every other worker since 1984</span></div><div class="pay-amt">Yes</div></div>
+      <div class="pay-row"><div class="pay-label">Health &amp; life insurance<span class="sub">Bought on the ACA exchange while serving; continues in retirement only under the 5-year federal rule — retiree pays ~¼ of the premium</span></div><div class="pay-amt">Not free</div></div>
+      <div class="pay-context">The pension is <strong>formula-based</strong> — roughly 1% of a member's highest three-year average salary for each year served — so it rewards longevity, not a single term. The average congressional pension paid in 2023 was about <strong>$45,000 a year</strong>; someone who serves only the five-year minimum gets far less. Marjorie Taylor Greene's roughly five years, for example, pencils out to about <strong>$8,700 a year</strong> — and not until she turns 62. Two footnotes on leaving: ex-members face a lobbying "cooling-off" period (two years for senators, one for representatives), and leftover campaign cash can't be pocketed — it can only move to other committees, charities, or a leadership PAC.</div>
+      <div class="data-links">
+        <span class="lbl">The source on this</span>
+        <a href="https://www.congress.gov/crs-product/RL30631" target="_blank" rel="noopener">CRS · Retirement Benefits for Members of Congress</a>
+      </div>
+    </div>
+
     <!-- TOP 10 -->
     <div class="cv-section">
-      <div class="cv-head"><h2>The Money Caucus</h2><div class="sub">Top 10 by net worth · 2025 est.</div></div>
-      <div class="cv-intro">The ten wealthiest sitting members, by estimated net worth drawn from financial disclosures (compiled from Quiver Quantitative's tracker and 2025 press analyses). Ranges reflect the disclosure brackets.</div>
+      <div class="cv-head"><h2>The Money Caucus</h2><div class="sub">Top 15 by net worth · 2025 est.</div></div>
+      <div class="cv-intro">The fifteen wealthiest sitting members, by estimated net worth from financial disclosures (compiled from Quiver Quantitative's tracker and 2025 press analyses). Ranges reflect the disclosure brackets. Below the top handful the ordering gets fuzzy — trackers disagree, and members with large but illiquid holdings, like Sen. Jim Justice's coal-and-resort empire, swing widely from list to list.</div>
 
       <div class="rich-row"><div class="rich-rank top">1</div><div><div class="rich-name">Rick Scott <span class="ps ps-R">R-FL</span></div><div class="rich-source">Healthcare — Columbia/HCA hospital empire</div></div><div class="rich-est">$300–550M</div></div>
-      <div class="rich-row"><div class="rich-rank">2</div><div><div class="rich-name">Darrell Issa <span class="ps ps-R">R-CA</span></div><div class="rich-source">Car-alarm fortune (Viper / Directed Electronics)</div></div><div class="rich-est">~$300M</div></div>
+      <div class="rich-row"><div class="rich-rank">2</div><div><div class="rich-name">Darrell Issa <span class="ps ps-R">R-CA</span></div><div class="rich-source">Car-alarm fortune (Viper / Directed Electronics) · retiring</div></div><div class="rich-est">~$300M</div></div>
       <div class="rich-row"><div class="rich-rank">3</div><div><div class="rich-name">Dave McCormick <span class="ps ps-R">R-PA</span></div><div class="rich-source">Hedge fund — former CEO of Bridgewater</div></div><div class="rich-est">$120–290M</div></div>
-      <div class="rich-row"><div class="rich-rank">4</div><div><div class="rich-name">Vern Buchanan <span class="ps ps-R">R-FL</span></div><div class="rich-source">Auto dealerships, real estate</div></div><div class="rich-est">~$249M</div></div>
+      <div class="rich-row"><div class="rich-rank">4</div><div><div class="rich-name">Vern Buchanan <span class="ps ps-R">R-FL</span></div><div class="rich-source">Auto dealerships, real estate · retiring</div></div><div class="rich-est">~$249M</div></div>
       <div class="rich-row"><div class="rich-rank">5</div><div><div class="rich-name">Nancy Pelosi <span class="ps ps-D">D-CA</span></div><div class="rich-source">Investments (real estate, tech via Paul Pelosi) · retiring</div></div><div class="rich-est">~$248M</div></div>
       <div class="rich-row"><div class="rich-rank">6</div><div><div class="rich-name">Mark Warner <span class="ps ps-D">D-VA</span></div><div class="rich-source">Telecom / early cellular (Nextel)</div></div><div class="rich-est">$215–250M</div></div>
-      <div class="rich-row"><div class="rich-rank">7</div><div><div class="rich-name">Michael McCaul <span class="ps ps-R">R-TX</span></div><div class="rich-source">Clear Channel fortune (via marriage)</div></div><div class="rich-est">~$200M</div></div>
+      <div class="rich-row"><div class="rich-rank">7</div><div><div class="rich-name">Michael McCaul <span class="ps ps-R">R-TX</span></div><div class="rich-source">Clear Channel fortune (via marriage) · retiring</div></div><div class="rich-est">~$200M</div></div>
       <div class="rich-row"><div class="rich-rank">8</div><div><div class="rich-name">Dan Goldman <span class="ps ps-D">D-NY</span></div><div class="rich-source">Levi Strauss &amp; Co. heir</div></div><div class="rich-est">$150–180M</div></div>
       <div class="rich-row"><div class="rich-rank">9</div><div><div class="rich-name">Pete Ricketts <span class="ps ps-R">R-NE</span></div><div class="rich-source">TD Ameritrade family; Cubs co-owner</div></div><div class="rich-est">$79–170M</div></div>
       <div class="rich-row"><div class="rich-rank">10</div><div><div class="rich-name">Suzan DelBene <span class="ps ps-D">D-WA</span></div><div class="rich-source">Microsoft executive turned legislator</div></div><div class="rich-est">$70–126M</div></div>
+      <div class="rich-row"><div class="rich-rank">11</div><div><div class="rich-name">Richard Blumenthal <span class="ps ps-D">D-CT</span></div><div class="rich-source">Real estate; wife's family (Malkin / Empire State Realty)</div></div><div class="rich-est">~$70–160M</div></div>
+      <div class="rich-row"><div class="rich-rank">12</div><div><div class="rich-name">Ro Khanna <span class="ps ps-D">D-CA</span></div><div class="rich-source">Family investment wealth (wife's family, Mura Holdings)</div></div><div class="rich-est">~$40–110M</div></div>
+      <div class="rich-row"><div class="rich-rank">13</div><div><div class="rich-name">Don Beyer <span class="ps ps-D">D-VA</span></div><div class="rich-source">Northern Virginia auto dealerships</div></div><div class="rich-est">~$45–125M</div></div>
+      <div class="rich-row"><div class="rich-rank">14</div><div><div class="rich-name">Kevin Hern <span class="ps ps-R">R-OK</span></div><div class="rich-source">McDonald's franchise empire · running for Senate</div></div><div class="rich-est">~$40–90M</div></div>
+      <div class="rich-row"><div class="rich-rank">15</div><div><div class="rich-name">Roger Williams <span class="ps ps-R">R-TX</span></div><div class="rich-source">Auto dealerships</div></div><div class="rich-est">~$30–60M</div></div>
 
       <div class="data-links">
         <span class="lbl">Verify against the public data</span>
@@ -878,6 +1001,7 @@ function showFY(fy) {
   document.getElementById('cr-banner').style.display = fy27 ? '' : 'none';
   document.getElementById('scenario-section').style.display = fy27 ? '' : 'none';
   document.getElementById('historic-section').style.display = fy27 ? '' : 'none';
+  document.getElementById('shutdown-section').style.display = fy27 ? '' : 'none';
   renderLegend(fy);
   renderSummary(fy);
   renderBills(fy);
